@@ -1,4 +1,7 @@
 {
+  "name": "systemjs-script-plugin",
+  "description": "Allows one to load external resources via script tags.",
+  "version": "0.1.4",
   "main": "script",
   "registry": "jspm",
   "dependencies": {}
