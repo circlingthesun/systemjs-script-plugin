@@ -1,5 +1,5 @@
 {
-  "name": "systemjs-script",
+  "name": "system-script",
   "description": "Allows one to load external resources via script tags.",
   "version": "0.1.6",
   "main": "script",
