@@ -14,6 +14,7 @@ exports.fetch = function(load) {
         return;
       }
       cleanup();
+      resolve('');
     }
 
     function error(evt) {
