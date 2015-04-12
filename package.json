@@ -1,8 +1,15 @@
 {
   "name": "systemjs-script-plugin",
   "description": "Allows one to load external resources via script tags.",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "script",
-  "registry": "jspm",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/circlingthesun/systemjs-script-plugin.git"
+    },
+    "bugs": {
+      "url": "https://github.com/circlingthesun/systemjs-script-plugin/issues"
+    },
+    "homepage": "https://github.com/circlingthesun/systemjs-script-plugin",
   "dependencies": {}
 }
