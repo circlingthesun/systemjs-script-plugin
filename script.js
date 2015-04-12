@@ -1,5 +1,4 @@
 exports.locate = function(load) {
-  console.log();
   return window.location.protocol + '//' + load.name;
 };
 
