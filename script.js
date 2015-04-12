@@ -1,23 +1,19 @@
+exports.locate = function(load) {
+  console.log();
+  return window.location.protocol + '//' + load.name;
+};
+
 exports.fetch = function(load) {
   return new Promise(function(resolve, reject) {
+    var head = document.getElementsByTagName('head')[0];
     var s = document.createElement('script');
     s.async = true;
 
     function complete(evt) {
-      if (s.readyState && s.readyState != 'loaded' && s.readyState != 'complete')
+      if (s.readyState && s.readyState !== 'loaded' && s.readyState != 'complete'){
         return;
+      }
       cleanup();
-
-      // this runs synchronously after execution
-      // we now need to tell the wrapper handlers that
-      // this load record has just executed
-      loader.onScriptLoad(load);
-
-      // if nothing registered, then something went wrong
-      if (!load.metadata.registered)
-        reject(load.address + ' did not call System.register or AMD define');
-
-      resolve('');
     }
 
     function error(evt) {
@@ -37,8 +33,9 @@ exports.fetch = function(load) {
     head.appendChild(s);
 
     function cleanup() {
-      if (s.detachEvent)
+      if (s.detachEvent){
         s.detachEvent('onreadystatechange', complete);
+      }
       else {
         s.removeEventListener('load', complete, false);
         s.removeEventListener('error', error, false);
