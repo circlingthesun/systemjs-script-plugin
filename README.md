@@ -7,8 +7,10 @@ Basic Use
 ---
 
 ```javascript
-import './script.js!script'
+import 'www.google-analytics.com/analytics.js!script'
 ```
+
+The example above loads google analytics via a script tag instead of a XHR request which avoid CORS issues.
 
 ### License
 
