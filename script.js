@@ -1,5 +1,11 @@
+/*
+ * https://www.npmjs.com/package/system-script
+ * system.js plugin to load an import via a script tag instead of a XHR request which avoid CORS issues
+ * */
+'use strict';
 exports.locate = function(load) {
-  return window.location.protocol + '//' + load.name;
+  var name = load.name.replace(/^(https?:)?\/\//, '');
+  return window.location.protocol + '//' + name;
 };
 
 exports.fetch = function(load) {
@@ -8,8 +14,8 @@ exports.fetch = function(load) {
     var s = document.createElement('script');
     s.async = true;
 
-    function complete(evt) {
-      if (s.readyState && s.readyState !== 'loaded' && s.readyState != 'complete'){
+    function complete(/*evt*/) {
+      if (s.readyState && s.readyState !== 'loaded' && s.readyState !== 'complete'){
         return;
       }
       cleanup();
