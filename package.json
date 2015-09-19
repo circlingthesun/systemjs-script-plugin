@@ -1,7 +1,7 @@
 {
   "name": "system-script",
   "description": "Allows one to load external resources via script tags.",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "main": "script",
   "repository": {
       "type": "git",
